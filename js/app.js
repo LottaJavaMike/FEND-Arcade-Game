@@ -31,48 +31,52 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-// Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
-var Player = function(x, y){
-	this.x = x;
-	this.y = y;
-	this.player = 'images/char-boy.png';
+// Creating the player
+var Player = function(x, y) {
+    this.x = 202;
+    this.y = 405;
+    this.player = 'images/char-boy.png';
 };
 
-Player.prototype.update = function(dt){
+Player.prototype.update = function(dt) {
 
 };
 
-Player.prototype.render = function(){
-	ctx.drawImage(Resources.get(this.player), this.x, this.y);
+Player.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.player), this.x, this.y);
+};
+// Resets the player starting location
+Player.prototype.reset = function() {
+    this.x = 202;
+    this.y = 405;
 };
 
 Player.prototype.handleInput = function(keyPress){
-	if(keyPress == 'left' && this.x > 0){
-		this.x -= 102;
-	};
-
-	if(keyPress == 'right' && this.x < 405) {
-		this.x += 102;
-	};
-
-	if(keyPress == 'up' && this.y > 0) {
-		this.y -= 83;
-	};
-
-	if(keyPress == 'down' && this.y < 405) {
-		this.y += 83;
-	};
-
-	if(this.y < 0) {
-		setTimeout(() => {
-			this.x = 202;
-			this.y = 405;
-		}, 800);
-	};
+    if(keyPress == 'left' && this.x > 0){
+        this.x -= 102;
+    };
+    if(keyPress == 'right' && this.x < 405){
+        this.x += 102;
+    };
+    if(keyPress == 'up' && this.y > 0){
+        this.y -= 83;
+    };
+    if(keyPress == 'down' && this.y < 405){
+        this.y += 83;
+    };
+    // When player reaches top, resets location of player and enemies
+    if(this.y < 0){
+        setTimeout(() => {
+            this.x = 202;
+            this.y = 405;
+            allEnemies.length = 0;
+            enemyStart.forEach(function(locationY){
+                enemy = new Enemy(0, Math.random() * 184 + 55, Math.random() * 128);
+                allEnemies.push(enemy);
+            });
+        }, 800);
+    };
 };
-
 //put enemies into an array
 var allEnemies = [];
 var enemyLocation = [63, 147, 230];
