@@ -77,18 +77,17 @@ Player.prototype.handleInput = function(keyPress){
         }, 800);
     };
 };
-//put enemies into an array
-var allEnemies = [];
-var enemyLocation = [63, 147, 230];
-enemyLocation.forEach(function (locationY) {
-	enemy = new Enemy(0, locationY, 200);
-	allEnemies.push(enemy);
-});
-
+// Instantiate objects.
+// Place the player object in a variable called player
 var player = new Player(202, 405);
-
-
-
+// Place all enemy objects in an array called allEnemies
+var allEnemies = [];
+// Enemy starting locations
+var enemyStart = [63, 147, 230];
+enemyStart.forEach(function(locationY){
+    enemy = new Enemy(0, Math.random() * 184 + 55, Math.random() * 128);
+    allEnemies.push(enemy);
+});
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
