@@ -22,5 +22,5 @@ To run the application:
 ## List of Resources
 [http://www.lostdecadegames.com/how-to-make-a-simple-html5-canvas-game/](http://www.lostdecadegames.com/how-to-make-a-simple-html5-canvas-game/ "How to Make a Simple HTML5 Canvas Game")   
 [http://stackoverflow.com/questions/9772307/declaring-javascript-object-method-in-constructor-function-vs-in-prototype/9772864#9772864/](http://stackoverflow.com/questions/9772307/declaring-javascript-object-method-in-constructor-function-vs-in-prototype/9772864#9772864/ "Stack Overflow - Object Methods in Constructor Functions vs. Prototypes")  
-[http://www.w3schools.com/Tags/ref_canvas.asp](http://www.w3schools.com/Tags/ref_canvas.asp "HTML5 Canvas Reference")
+[http://www.w3schools.com/Tags/ref_canvas.asp](http://www.w3schools.com/Tags/ref_canvas.asp "HTML5 Canvas Reference")  
 [https://github.com/alexsales/frontend-nanodegree-frogger-arcade-game/blob/frogger-arcade-master/README.md](https://github.com/alexsales/frontend-nanodegree-frogger-arcade-game/blob/frogger-arcade-master/README.md "alexsales Readme.md - markdown seemed to confuse me, this helped me figure it out")
